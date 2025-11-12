@@ -1,0 +1,30 @@
+# Environment variables
+.env
+.env.local
+.env*.local
+
+# OS files
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite
+

@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model TrackSnapshot {
+  id             Int      @id @default(autoincrement())
+  track          String
+  focus          String[]
+  level          String
+  currentLevel   Json
+  upcomingLevel  Json
+  referenceNotes String[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model PanelSnapshot {
+  id            Int      @id @default(autoincrement())
+  panel         Json
+  quickPractice Json
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ProgressSnapshot {
+  id               Int      @id @default(autoincrement())
+  track            String
+  level            String
+  xp               Int
+  weeklyChange     Int
+  completedPanels  Int
+  streakDays       Int
+  upcomingGoals    String[]
+  difficultyMix    Json
+  metricSparklines Json
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
